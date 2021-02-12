@@ -10,4 +10,7 @@
     <color name="colorCustomGreen">#beeceb</color>
     <color name="colorBlack">#000000</color>
     <color name="colorCustomYellow">#3C4821</color>
+    <color name="colorBlue">#3363F2</color>
+    <color name="colorBlue1">#1E47C0</color>
+    <color name="colorBlue2">#0C2F98</color>
 </resources>
