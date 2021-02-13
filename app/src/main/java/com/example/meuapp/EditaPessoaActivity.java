@@ -51,4 +51,5 @@ public class EditaPessoaActivity extends AppCompatActivity {
         editaUsuarioPessoa.setText(pessoa.getString("usuario"));
         editaSenhaPessoa.setText(pessoa.getString("senha"));
     }
+    
 }

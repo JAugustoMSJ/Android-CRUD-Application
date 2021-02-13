@@ -7,105 +7,162 @@
     android:background="@drawable/fundopreto"
     tools:context=".EditaPessoaActivity">
 
-    <EditText
-        android:id="@+id/editaNomePessoa"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutCenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:foregroundGravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaCpfPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaNomePessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaEnderecoPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaCpfPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaDataNascPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaEnderecoPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaTelefonePessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaDataNascPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaEstadoPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaTelefonePessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaCidadePessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaEstadoPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaEmailPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaCidadePessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaUsuarioPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaEmailPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
-    <EditText
-        android:id="@+id/editaSenhaPessoa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textColor="@color/colorHint"
-        app:layout_constraintTop_toBottomOf="@+id/editaUsuarioPessoa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:ems="10" />
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/txtAlterarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ALTERAR USUÁRIO"
+            android:fontFamily="@font/alfa_slab_one"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/colorHint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <EditText
+            android:id="@+id/editaNomePessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/txtAlterarUsuario"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaCpfPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaNomePessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaEnderecoPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaCpfPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaDataNascPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaEnderecoPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaTelefonePessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaDataNascPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaEstadoPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaTelefonePessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaCidadePessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaEstadoPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaEmailPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaCidadePessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaUsuarioPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaEmailPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <EditText
+            android:id="@+id/editaSenhaPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorHint"
+            android:background="@drawable/buttonshape"
+            app:layout_constraintTop_toBottomOf="@+id/editaUsuarioPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:ems="10" />
+        <Button
+            android:id="@+id/btnAlterar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Alterar"
+            android:textColor="@color/colorHint"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/editaSenhaPessoa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,7 @@ import com.example.meuapp.crud.Create;
 import com.example.meuapp.crud.Read;
 import com.example.meuapp.model.Pessoa;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -22,6 +23,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -73,24 +75,33 @@ public class LoginActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(LoginActivity.this);
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
-        LoginButton loginButton = findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email", "public_profile");
-        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+        Button loginButton = findViewById(R.id.login_button);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(LoginResult loginResult) {
+            public void onClick(View view) {
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this,
+                        Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
 //                Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                handleFacebookAccessToken(loginResult.getAccessToken());
-                Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
-            }
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                        Toast.makeText(getApplicationContext(), "Logado com sucesso!", Toast.LENGTH_SHORT).show();
+                    }
 
-            @Override
-            public void onCancel() {
-            }
+                    @Override
+                    public void onCancel() {
+                    }
 
-            @Override
-            public void onError(FacebookException error) {
+                    @Override
+                    public void onError(FacebookException error) {
+                    }
+                });
             }
         });
+//        loginButton.setReadPermissions("email", "public_profile");
+//        loginButton.registerCallback(
     }
 
     public void verificaPessoa(){
