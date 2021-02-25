@@ -3,6 +3,7 @@ package com.example.meuapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(LoginActivity.this);
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
-        Button loginButton = findViewById(R.id.login_button);
+        final Button loginButton = findViewById(R.id.login_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this,
                         Arrays.asList("email", "public_profile"));
                 LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                    @SuppressLint("ResourceAsColor")
                     @Override
                     public void onSuccess(LoginResult loginResult) {
 //                Log.d(TAG, "facebook:onSuccess:" + loginResult);
@@ -111,9 +113,11 @@ public class LoginActivity extends AppCompatActivity {
             System.out.println("Nome e(ou) senha vazio(s)!");
             Toast.makeText(this, "Insira usuário e senha!", Toast.LENGTH_SHORT).show();
         }else {
-            if(nome.equals("dev.augusto") && senha.equals("1234"))
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            else
+            if(nome.equals("dev.augusto") && senha.equals("1234")) {
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                intent.putExtra("nome_usuario", nome);
+                startActivity(intent);
+            }else
                 Toast.makeText(this, "Usuário e/ou Senha inválido(a)!", Toast.LENGTH_SHORT).show();
             }
     }

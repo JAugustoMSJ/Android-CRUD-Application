@@ -8,6 +8,21 @@
     android:background="@drawable/fundopreto"
     tools:context=".HomeActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="OPERAÇÕES"
+        android:textStyle="bold"
+        android:textColor="@color/colorHint"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/btn_add"
         android:layout_width="100dp"
@@ -57,20 +72,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_pesquisar"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/operacoes"
-        android:textColor="@color/colorHint"
-        android:fontFamily="@font/alfa_slab_one"
-        android:textSize="36sp"
-        app:fontFamily="sans-serif-condensed-light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorBottom"
         android:layout_width="match_parent"
@@ -81,9 +82,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_atualizar"
         app:layout_constraintVertical_bias="1.0">
-
         <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
+            android:id="@+id/bottomAppBarHome"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,21 +98,20 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawerLayoutProfile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.drawerlayout.widget.DrawerLayout-->
+<!--        android:id="@+id/drawer_profile"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+<!--        <com.google.android.material.navigation.NavigationView-->
+<!--            android:id="@+id/navigationViewProfile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="start"-->
+<!--            app:headerLayout="@layout/header"-->
+<!--            app:menu="@menu/app_bar_user_menu"/>-->
+<!--    </androidx.drawerlayout.widget.DrawerLayout>-->
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationViewProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/header"
-            app:menu="@menu/app_bar_menu"></com.google.android.material.navigation.NavigationView>
-
-    </androidx.drawerlayout.widget.DrawerLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

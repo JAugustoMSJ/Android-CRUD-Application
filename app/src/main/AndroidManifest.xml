@@ -19,8 +19,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DeletaActivity" />
         <activity android:name=".AtualizaActivity" />
-        <activity android:name=".HomeActivity">
-
+        <activity android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 
